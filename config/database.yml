@@ -58,5 +58,6 @@ production:
         - <%="#{ENV['OPENSHIFT_MYSQL_DB_HOST']}:#{ENV['OPENSHIFT_MYSQL_DB_PORT']}" %>
       username: <%= ENV['OPENSHIFT_MYSQL_DB_USERNAME'] %>
       password: <%= ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] %>
+	
 <% end %>
 
