@@ -1,0 +1,29 @@
+<%= form_for @post do |f| %>
+	<%if @post.errors.any? %>
+		<dir id="errors">
+		<font color="red"><h2><%= pluralize(@post.errors.count ,"error") %></h2></font>
+		<ul>
+			<% @post.errors.full_messages.each do |msg|   %>
+				<li><%=msg %></li>
+			<% end %>
+		</ul>	
+
+		</dir>
+
+	<% end %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field  :title %>
+	</p>
+
+	<p>
+		<%= f.label :body %><br>
+		<%= f.text_area  :body %>
+	</p>
+	<p>
+		<%= f.submit %><br>
+		
+	</p>
+
+	
+<% end%>

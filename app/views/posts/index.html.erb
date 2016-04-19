@@ -1,0 +1,29 @@
+<!-- <h1>All Posts</h1>
+ -->
+<% @posts.each do |post|%>
+
+<div class="post_wrapper">
+	<h2  class="title">
+		<%= link_to post.title, post%>
+	</h2>
+
+	<p class="body">
+		
+
+		<%= post.body %>
+	</p>	
+	<p  class="date" >
+		
+		 <font color="Cyan">published at <%= post.created_at.strftime("%B ,%d, %Y") %></font> 
+		 <%if user_signed_in?%>
+			<font color="blue"><%= link_to 'Edit', edit_post_path(post) %></font>
+			<font color="red"><%= link_to 'Delete', post_path(post),
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %></font>
+	    <% end %>          
+	</p>
+
+
+</div>
+
+<%end%>
